@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-charcoal: #0e0d0b;
+  --color-charcoal-light: #17150f;
+  --color-cream: #f3ede1;
+  --color-bronze: #c4a05a;
+  --color-bronze-light: #d9bd85;
+  --color-umber: #7a5f30;
+
+  /* Light-section tone (Why The Autograph, Configurations, Amenities, Location, Developer) */
+  --color-ivory: #f7f3ec;
+  --color-ivory-dim: #efe9de;
+  --color-ink: #1a1713;
+  --color-bronze-dark: #a8873f;
+
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-charcoal);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .section-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-bronze);
+  }
+
+  /* On light section backgrounds, small bronze text needs the darker shade to pass contrast. */
+  .section-label-on-light {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-bronze-dark);
+  }
+
+  .divider-line {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-bronze),
+      transparent
+    );
+  }
+
+  /* Thin bronze hairline used to separate alternating dark/light sections. */
+  .section-hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in srgb, var(--color-bronze) 55%, transparent),
+      transparent
+    );
+  }
+
+  /* Smooth height animation for the FAQ accordion via the grid-rows trick — no JS measuring needed. */
+  .accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease-out;
+  }
+
+  .accordion-panel.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-panel > div {
+    overflow: hidden;
+  }
+}
