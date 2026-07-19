@@ -51,12 +51,11 @@ export const IMAGES = {
 
   gallery: {
     arrivalCourt: '/images/arrival-court.jpg',
-    landscapeGardenWalk: '/images/landscape-garden-walk.jpg',
-    terraceLandscape: '/images/terrace-landscape.jpg',
+    exteriorFacade: '/images/exterior-towers-day.jpg',
     lobbyReception: '/images/lobby-reception.jpg',
+    landscapeGardenWalk: '/images/landscape-garden-walk.jpg',
     drawingRoom: '/images/drawing-room.jpg',
-    parentBedroom: '/images/parent-bedroom.jpg',
-    guestBedroom: '/images/guest-bedroom.jpg',
+    masterBedroom: '/images/master-bedroom.jpg',
   },
 
   amenities: {
@@ -104,7 +103,7 @@ export const stats = [
   { value: '40+', label: 'World-Class Amenities' },
   { value: '47,300', label: 'Sq.Ft. Clubhouse' },
   { value: '63%', label: 'Open Green Area' },
-  { value: '2030', label: 'Expected Possession' },
+  { value: '2030', label: 'Possession' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -234,13 +233,12 @@ export const featuredAmenities = [
 // 7. GALLERY
 // ---------------------------------------------------------------------------
 export const gallery = [
-  { image: IMAGES.gallery.arrivalCourt, alt: 'Arrival court at The Autograph', size: 'large' as const },
-  { image: IMAGES.gallery.landscapeGardenWalk, alt: 'Landscaped garden walk', size: 'small' as const },
-  { image: IMAGES.gallery.terraceLandscape, alt: 'Terrace landscape', size: 'small' as const },
-  { image: IMAGES.gallery.lobbyReception, alt: '5-star private lobby reception', size: 'large' as const },
-  { image: IMAGES.gallery.drawingRoom, alt: 'Drawing room interior', size: 'small' as const },
-  { image: IMAGES.gallery.parentBedroom, alt: "Parent's bedroom interior", size: 'small' as const },
-  { image: IMAGES.gallery.guestBedroom, alt: 'Guest bedroom interior', size: 'small' as const },
+  { image: IMAGES.gallery.arrivalCourt, alt: 'Arrival court at The Autograph' },
+  { image: IMAGES.gallery.exteriorFacade, alt: 'Exterior facade of The Autograph towers' },
+  { image: IMAGES.gallery.lobbyReception, alt: '5-star private lobby reception' },
+  { image: IMAGES.gallery.landscapeGardenWalk, alt: 'Landscaped garden walk' },
+  { image: IMAGES.gallery.drawingRoom, alt: 'Drawing room interior' },
+  { image: IMAGES.gallery.masterBedroom, alt: 'Master bedroom interior' },
 ]
 
 // ---------------------------------------------------------------------------

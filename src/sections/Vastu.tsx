@@ -4,8 +4,8 @@ import SectionLabel from '../components/SectionLabel'
 
 export default function Vastu() {
   return (
-    <section className="bg-charcoal-light px-6 py-20 sm:px-8 sm:py-[120px]">
-      <div className="section-hairline -mx-6 mb-16 sm:-mx-8 sm:mb-20" />
+    <section className="bg-charcoal-light px-6 py-[40px] sm:px-8 sm:py-[60px]">
+      <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <FadeIn className="text-center lg:text-left">
           <SectionLabel>{vastu.label}</SectionLabel>

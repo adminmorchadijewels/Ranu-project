@@ -2,7 +2,7 @@ import { PROJECT, footer } from '../config/site'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-bronze/10 bg-charcoal px-6 pt-20 pb-[calc(56px+env(safe-area-inset-bottom)+2rem)] sm:px-8 sm:pt-[120px] md:pb-[120px]">
+    <footer className="border-t border-bronze/10 bg-charcoal px-6 pt-[40px] pb-[calc(56px+env(safe-area-inset-bottom)+2rem)] sm:px-8 sm:pt-[60px] md:pb-[60px]">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center text-center">
           <span className="font-serif text-2xl font-light text-cream">{PROJECT.name}</span>

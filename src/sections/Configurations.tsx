@@ -5,7 +5,7 @@ import Button from '../components/Button'
 
 export default function Configurations() {
   return (
-    <section className="bg-ivory px-6 py-20 sm:px-8 sm:py-[120px]">
+    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="text-center">
           <SectionLabel tone="light">(THE RESIDENCES)</SectionLabel>
@@ -14,7 +14,7 @@ export default function Configurations() {
           </h2>
         </FadeIn>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-12 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 lg:grid-cols-3">
           {configurations.map((config, i) => (
             <FadeIn key={config.name} delay={i * 0.08}>
               <div className="group overflow-hidden rounded-2xl border border-bronze-dark/20 bg-white transition-all duration-300 ease-out hover:border-bronze-dark/50">
@@ -50,7 +50,7 @@ export default function Configurations() {
           ))}
         </div>
 
-        <FadeIn className="mt-12 text-center" delay={0.1}>
+        <FadeIn className="mt-10 text-center" delay={0.1}>
           <Button
             as="a"
             href={buildWhatsAppLink('Hi, please share the floor plans for The Autograph.')}

@@ -5,7 +5,7 @@ import LeadForm from '../components/LeadForm'
 
 export default function LeadCapture() {
   return (
-    <section className="bg-charcoal-light px-6 py-20 sm:px-8 sm:py-[120px]">
+    <section className="bg-charcoal-light px-6 py-[40px] sm:px-8 sm:py-[60px]">
       <div className="mx-auto max-w-2xl text-center">
         <FadeIn>
           <SectionLabel>{leadCapture.label}</SectionLabel>

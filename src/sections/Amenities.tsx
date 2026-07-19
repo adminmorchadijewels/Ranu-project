@@ -49,9 +49,14 @@ const icons: LucideIcon[] = [
   Landmark,
 ]
 
+const featuredNames = new Set(featuredAmenities.map((item) => item.name))
+const iconOnlyAmenities = amenities
+  .map((amenity, i) => ({ amenity, Icon: icons[i % icons.length] }))
+  .filter((item) => !featuredNames.has(item.amenity))
+
 export default function Amenities() {
   return (
-    <section className="bg-ivory-dim px-6 py-20 sm:px-8 sm:py-[120px]">
+    <section className="bg-ivory-dim px-6 py-[40px] sm:px-8 sm:py-[60px]">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <FadeIn className="order-2 lg:order-1">
@@ -74,7 +79,7 @@ export default function Amenities() {
 
         {/* Block A — featured amenities: mobile snap-scroll, tablet 2x2, desktop one row of 4. Image cards only, never mixed with the icon grid below. */}
         <FadeIn delay={0.15}>
-          <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:hidden [&::-webkit-scrollbar]:hidden">
+          <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:hidden [&::-webkit-scrollbar]:hidden">
             {featuredAmenities.map((item) => (
               <div
                 key={item.name}
@@ -95,7 +100,7 @@ export default function Amenities() {
             ))}
           </div>
 
-          <div className="mt-10 hidden grid-cols-2 gap-4 sm:grid sm:gap-6 lg:grid-cols-4">
+          <div className="mt-8 hidden grid-cols-2 gap-4 sm:grid sm:gap-6 lg:grid-cols-4">
             {featuredAmenities.map((item) => (
               <div
                 key={item.name}
@@ -117,23 +122,20 @@ export default function Amenities() {
           </div>
         </FadeIn>
 
-        {/* Block B — full amenity list, icon-only. Never mixes photo cards in with these. */}
-        <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-4">
-          {amenities.map((amenity, i) => {
-            const Icon = icons[i % icons.length]
-            return (
-              <FadeIn key={amenity} delay={(i % 8) * 0.04}>
-                <div className="flex h-full flex-col items-center gap-3 text-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-bronze-dark/30">
-                    <Icon className="h-5 w-5 text-bronze-dark" strokeWidth={1.25} />
-                  </div>
-                  <span className="text-xs font-medium leading-snug text-ink/75 sm:text-sm">
-                    {amenity}
-                  </span>
+        {/* Block B — remaining amenities not already shown as a photo card above, icon-only. Never mixes photo cards in with these. */}
+        <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-12 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-4">
+          {iconOnlyAmenities.map(({ amenity, Icon }, i) => (
+            <FadeIn key={amenity} delay={(i % 8) * 0.04}>
+              <div className="flex h-full flex-col items-center gap-3 text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-bronze-dark/30">
+                  <Icon className="h-5 w-5 text-bronze-dark" strokeWidth={1.25} />
                 </div>
-              </FadeIn>
-            )
-          })}
+                <span className="text-xs font-medium leading-snug text-ink/75 sm:text-sm">
+                  {amenity}
+                </span>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>

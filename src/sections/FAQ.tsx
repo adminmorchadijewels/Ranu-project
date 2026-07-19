@@ -8,8 +8,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-ivory px-6 py-20 sm:px-8 sm:py-[120px]">
-      <div className="section-hairline -mx-6 mb-16 sm:-mx-8 sm:mb-20" />
+    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
+      <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-3xl">
         <FadeIn className="text-center">
           <SectionLabel tone="light">{faq.label}</SectionLabel>
@@ -18,7 +18,7 @@ export default function FAQ() {
           </h2>
         </FadeIn>
 
-        <div className="mt-10 sm:mt-12">
+        <div className="mt-8 sm:mt-10">
           {faq.items.map((item, i) => {
             const isOpen = openIndex === i
             return (

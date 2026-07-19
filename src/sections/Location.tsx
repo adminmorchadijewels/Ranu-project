@@ -4,8 +4,8 @@ import SectionLabel from '../components/SectionLabel'
 
 export default function Location() {
   return (
-    <section className="bg-ivory px-6 py-20 sm:px-8 sm:py-[120px]">
-      <div className="section-hairline -mx-6 mb-16 sm:-mx-8 sm:mb-20" />
+    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
+      <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-6xl">
         <FadeIn className="text-center">
           <SectionLabel tone="light">(THE ADDRESS)</SectionLabel>
@@ -17,7 +17,7 @@ export default function Location() {
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {locationColumns.map((col, i) => (
             <FadeIn key={col.title} delay={i * 0.08}>
               <div>

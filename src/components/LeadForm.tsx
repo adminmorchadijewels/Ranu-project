@@ -1,5 +1,6 @@
 import { useId, useState, type FormEvent } from 'react'
-import { buildWhatsAppLink } from '../config/site'
+import { CheckCircle2 } from 'lucide-react'
+import { buildWhatsAppLink, CALL_LINK, PHONE_DISPLAY } from '../config/site'
 import Button from './Button'
 
 interface LeadFormProps {
@@ -16,6 +17,7 @@ export default function LeadForm({ buildMessage, submitLabel, className = '' }: 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
+  const [submittedName, setSubmittedName] = useState<string | null>(null)
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -35,6 +37,39 @@ export default function LeadForm({ buildMessage, submitLabel, className = '' }: 
     setError('')
     const link = buildWhatsAppLink(buildMessage(trimmedName, digitsOnlyPhone))
     window.open(link, '_blank', 'noopener,noreferrer')
+    setSubmittedName(trimmedName)
+  }
+
+  function handleReset() {
+    setSubmittedName(null)
+    setName('')
+    setPhone('')
+    setError('')
+  }
+
+  if (submittedName) {
+    return (
+      <div className={`text-center ${className}`}>
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-bronze/40 text-bronze">
+          <CheckCircle2 className="h-7 w-7" strokeWidth={1.5} />
+        </div>
+        <p className="mt-5 text-lg font-medium text-cream">Thank you, {submittedName}.</p>
+        <p className="mx-auto mt-2 max-w-sm text-sm font-light leading-relaxed text-cream/70">
+          We&apos;re opening WhatsApp now. If it doesn&apos;t open automatically, please call us at{' '}
+          <a href={CALL_LINK} className="text-bronze underline-offset-4 hover:underline">
+            {PHONE_DISPLAY}
+          </a>
+          .
+        </p>
+        <button
+          type="button"
+          onClick={handleReset}
+          className="mt-6 text-sm font-light text-cream/60 underline-offset-4 hover:text-bronze hover:underline"
+        >
+          Send another enquiry
+        </button>
+      </div>
+    )
   }
 
   return (

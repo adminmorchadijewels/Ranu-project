@@ -8,12 +8,12 @@ const icons = [Gem, SunMedium, ArrowUpNarrowWide, DoorOpen, ShieldCheck, CarFron
 
 export default function WhyAutograph() {
   return (
-    <section className="bg-ivory px-6 py-20 sm:px-8 sm:py-[120px]">
-      <div className="section-hairline -mx-6 mb-16 sm:-mx-8 sm:mb-20" />
+    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
+      <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <FadeIn>
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-[3/2]">
               <img
                 src={IMAGES.whyAutograph}
                 alt="Exterior facade of The Autograph towers in daylight"
@@ -22,7 +22,7 @@ export default function WhyAutograph() {
               />
             </div>
           </FadeIn>
-          <FadeIn delay={0.1}>
+          <FadeIn delay={0.1} className="flex h-full flex-col justify-center">
             <SectionLabel tone="light">(WHY THE AUTOGRAPH)</SectionLabel>
             <h2 className="mt-5 text-4xl font-light leading-tight text-ink sm:text-5xl">
               Details That Set It Apart
@@ -30,7 +30,7 @@ export default function WhyAutograph() {
           </FadeIn>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 items-stretch gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 items-stretch gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {whyFeatures.map((feature, i) => {
             const Icon = icons[i]
 
