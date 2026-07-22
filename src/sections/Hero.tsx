@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
+import { Download } from 'lucide-react'
 import { hero, IMAGES, WHATSAPP_LINK, CALL_LINK } from '../config/site'
+import { useBrochureModal } from '../context/BrochureModalContext'
 import Button from '../components/Button'
 
 export default function Hero() {
+  const { open: openBrochureModal } = useBrochureModal()
+
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-charcoal">
       <img
@@ -66,6 +70,18 @@ export default function Hero() {
             {hero.callCtaLabel}
           </Button>
         </motion.div>
+
+        <motion.button
+          type="button"
+          onClick={openBrochureModal}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 inline-flex items-center gap-2 text-sm font-light text-cream/70 underline-offset-4 transition-colors hover:text-bronze hover:underline"
+        >
+          <Download className="h-4 w-4" strokeWidth={1.75} />
+          Download Brochure
+        </motion.button>
       </div>
 
       <p className="absolute bottom-6 left-0 right-0 z-10 px-6 text-center text-[11px] font-light tracking-wide text-cream/50 sm:bottom-8">

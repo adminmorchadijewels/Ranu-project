@@ -1,17 +1,29 @@
-import { useId, useState, type FormEvent } from 'react'
+import { useId, useState, type FormEvent, type ReactNode } from 'react'
 import { CheckCircle2 } from 'lucide-react'
-import { buildWhatsAppLink, CALL_LINK, PHONE_DISPLAY } from '../config/site'
+import { CALL_LINK, PHONE_DISPLAY } from '../config/site'
 import Button from './Button'
 
 interface LeadFormProps {
-  /** Builds the pre-filled WhatsApp message from the submitted name and 10-digit phone. */
-  buildMessage: (name: string, phone: string) => string
+  /** Called with the validated name and 10-digit phone once the form passes validation. */
+  onSubmit: (name: string, phone: string) => void
   submitLabel: string
   className?: string
+  /** Confirmation copy shown after submit. Defaults to the WhatsApp-only note. */
+  successNote?: ReactNode
 }
 
-/** Compact name + phone form that opens WhatsApp with a pre-filled message on submit. Shared by the top lead capture section and the Final CTA. */
-export default function LeadForm({ buildMessage, submitLabel, className = '' }: LeadFormProps) {
+const defaultSuccessNote = (
+  <>
+    We&apos;re opening WhatsApp now. If it doesn&apos;t open automatically, please call us at{' '}
+    <a href={CALL_LINK} className="text-bronze underline-offset-4 hover:underline">
+      {PHONE_DISPLAY}
+    </a>
+    .
+  </>
+)
+
+/** Compact name + phone form. Validates both fields, then hands off to `onSubmit` and shows a thank-you state. Shared by the top lead capture section, the Final CTA and the brochure download flow. */
+export default function LeadForm({ onSubmit, submitLabel, className = '', successNote }: LeadFormProps) {
   const nameId = useId()
   const phoneId = useId()
   const [name, setName] = useState('')
@@ -35,8 +47,7 @@ export default function LeadForm({ buildMessage, submitLabel, className = '' }: 
     }
 
     setError('')
-    const link = buildWhatsAppLink(buildMessage(trimmedName, digitsOnlyPhone))
-    window.open(link, '_blank', 'noopener,noreferrer')
+    onSubmit(trimmedName, digitsOnlyPhone)
     setSubmittedName(trimmedName)
   }
 
@@ -55,11 +66,7 @@ export default function LeadForm({ buildMessage, submitLabel, className = '' }: 
         </div>
         <p className="mt-5 text-lg font-medium text-cream">Thank you, {submittedName}.</p>
         <p className="mx-auto mt-2 max-w-sm text-sm font-light leading-relaxed text-cream/70">
-          We&apos;re opening WhatsApp now. If it doesn&apos;t open automatically, please call us at{' '}
-          <a href={CALL_LINK} className="text-bronze underline-offset-4 hover:underline">
-            {PHONE_DISPLAY}
-          </a>
-          .
+          {successNote ?? defaultSuccessNote}
         </p>
         <button
           type="button"

@@ -1,4 +1,4 @@
-import { leadCapture, buildPriceEnquiryMessage } from '../config/site'
+import { leadCapture, buildPriceEnquiryMessage, openWhatsApp } from '../config/site'
 import FadeIn from '../components/FadeIn'
 import SectionLabel from '../components/SectionLabel'
 import LeadForm from '../components/LeadForm'
@@ -19,7 +19,7 @@ export default function LeadCapture() {
 
         <FadeIn delay={0.15}>
           <LeadForm
-            buildMessage={buildPriceEnquiryMessage}
+            onSubmit={(name, phone) => openWhatsApp(buildPriceEnquiryMessage(name, phone))}
             submitLabel={leadCapture.formCtaLabel}
             className="mx-auto mt-8 max-w-[640px]"
           />

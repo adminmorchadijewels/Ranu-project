@@ -1,8 +1,11 @@
-import { Phone } from 'lucide-react'
+import { Download, Phone } from 'lucide-react'
 import { WHATSAPP_LINK, CALL_LINK, PROJECT } from '../config/site'
+import { useBrochureModal } from '../context/BrochureModalContext'
 import Button from './Button'
 
 export default function TopBar() {
+  const { open: openBrochureModal } = useBrochureModal()
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-bronze/10 bg-charcoal/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8 sm:py-4">
@@ -20,6 +23,14 @@ export default function TopBar() {
           >
             Enquire on WhatsApp
           </Button>
+          <button
+            type="button"
+            onClick={openBrochureModal}
+            className="hidden h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-bronze/40 px-5 text-sm text-bronze transition-colors duration-300 hover:bg-bronze/10 active:scale-95 sm:flex"
+          >
+            <Download className="h-4 w-4 shrink-0" strokeWidth={1.75} />
+            Download Brochure
+          </button>
           <a
             href={CALL_LINK}
             aria-label="Call The Autograph"

@@ -1,6 +1,7 @@
 import {
   finalCta,
   buildEnquiryMessage,
+  openWhatsApp,
   CALL_LINK,
 } from '../config/site'
 import FadeIn from '../components/FadeIn'
@@ -22,7 +23,7 @@ export default function FinalCta() {
 
         <FadeIn delay={0.15}>
           <LeadForm
-            buildMessage={buildEnquiryMessage}
+            onSubmit={(name, phone) => openWhatsApp(buildEnquiryMessage(name, phone))}
             submitLabel={finalCta.formCtaLabel}
             className="mx-auto mt-10 max-w-[640px]"
           />

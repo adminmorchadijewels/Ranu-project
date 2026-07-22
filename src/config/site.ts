@@ -34,6 +34,11 @@ export const WHATSAPP_PLAIN_LINK = `https://wa.me/${WHATSAPP_NUMBER}`
 /** tel: link used by every "Call" button and icon on the site. */
 export const CALL_LINK = `tel:+${PHONE}`
 
+/** Opens a WhatsApp chat with a pre-filled message in a new tab. Shared by every lead form's submit handler. */
+export function openWhatsApp(message: string): void {
+  window.open(buildWhatsAppLink(message), '_blank', 'noopener,noreferrer')
+}
+
 // ---------------------------------------------------------------------------
 // IMAGES — local renders shipped in /public/images/. Swap any file at the
 // path on the right with a new one of the same name — no code changes
@@ -122,6 +127,40 @@ export const leadCapture = {
 /** Builds the pre-filled WhatsApp message for the top lead capture form. */
 export function buildPriceEnquiryMessage(name: string, phone: string): string {
   return `Hi, my name is ${name}, phone ${phone}. Please send me the price details and floor plans for The Autograph.`
+}
+
+// ---------------------------------------------------------------------------
+// 2C. BROCHURE DOWNLOAD — path lives in /public, served at the site root.
+// Triggered from the top bar, hero and the dedicated brochure CTA band via
+// the shared handler in src/lib/brochure.ts.
+// ---------------------------------------------------------------------------
+export const BROCHURE_PDF_PATH = '/The-Autograph-Brochure.pdf'
+
+export const brochureCta = {
+  label: '(THE BROCHURE)',
+  headline: 'Explore Every Detail',
+  subline:
+    'Get the complete brochure with floor plans, specifications and pricing — delivered instantly.',
+  formCtaLabel: 'Download Brochure',
+}
+
+/** Builds the pre-filled WhatsApp message sent after a brochure download. */
+export function buildBrochureMessage(name: string, phone: string): string {
+  return `Hi, my name is ${name}, phone ${phone}. I've downloaded the brochure for The Autograph. Please share more details.`
+}
+
+// ---------------------------------------------------------------------------
+// 2D. VIDEO — "(THE FILM)" section between the Pitch and Why The Autograph.
+// Paste the YouTube video ID below once it's uploaded (the part after
+// "watch?v=" in the URL) and the placeholder switches to a lazy-loaded
+// embed automatically. Leave empty to keep showing the "coming soon" card.
+// ---------------------------------------------------------------------------
+export const VIDEO_ID = ''
+
+export const videoSection = {
+  label: '(THE FILM)',
+  headline: 'Experience The Autograph',
+  placeholder: 'Video coming soon',
 }
 
 // ---------------------------------------------------------------------------
