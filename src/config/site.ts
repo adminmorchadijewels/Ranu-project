@@ -155,7 +155,8 @@ export function buildBrochureMessage(name: string, phone: string): string {
 // "watch?v=" in the URL) and the placeholder switches to a lazy-loaded
 // embed automatically. Leave empty to keep showing the "coming soon" card.
 // ---------------------------------------------------------------------------
-export const VIDEO_ID = ''
+export const VIDEO_ID = 'pt0_t_01RzA'
+
 
 export const videoSection = {
   label: '(THE FILM)',
