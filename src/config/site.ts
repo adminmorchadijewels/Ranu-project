@@ -108,7 +108,7 @@ export const stats = [
   { value: '40+', label: 'World-Class Amenities' },
   { value: '47,300', label: 'Sq.Ft. Clubhouse' },
   { value: '63%', label: 'Open Green Area' },
-  { value: '2029', label: 'Possession' },
+  { value: 'DEC 2029', label: 'Possession', compact: true },
 ]
 
 // ---------------------------------------------------------------------------
