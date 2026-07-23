@@ -3,7 +3,7 @@ import FadeIn from '../components/FadeIn'
 
 export default function StatStrip() {
   return (
-    <section className="bg-charcoal py-[40px] sm:py-[60px]">
+    <section className="bg-charcoal py-[32px] sm:py-[60px]">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <div className="divider-line" />
         <FadeIn>

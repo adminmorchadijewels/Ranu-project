@@ -4,7 +4,7 @@ import SectionLabel from '../components/SectionLabel'
 
 export default function Developer() {
   return (
-    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
+    <section className="bg-ivory px-6 py-[32px] sm:px-8 sm:py-[60px]">
       <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-4xl text-center">
         <FadeIn>

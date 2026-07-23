@@ -8,7 +8,7 @@ const icons = [Gem, SunMedium, ArrowUpNarrowWide, DoorOpen, ShieldCheck, CarFron
 
 export default function WhyAutograph() {
   return (
-    <section className="bg-ivory px-6 py-[40px] sm:px-8 sm:py-[60px]">
+    <section className="bg-ivory px-6 py-[32px] sm:px-8 sm:py-[60px]">
       <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -30,7 +30,27 @@ export default function WhyAutograph() {
           </FadeIn>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 items-stretch gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        {/* Mobile: compact 2-column tile grid, all six cards always visible. Tablet/desktop: unchanged. */}
+        <div className="mt-8 grid grid-cols-2 gap-0 md:hidden">
+          {whyFeatures.map((feature, i) => {
+            const Icon = icons[i]
+
+            return (
+              <div
+                key={feature.title}
+                className="flex min-h-[132px] flex-col gap-1 border border-bronze-dark/20 bg-white/60 p-4"
+              >
+                <Icon className="h-5 w-5 text-bronze-dark" strokeWidth={1.25} />
+                <h3 className="mt-2 text-sm font-semibold text-ink">{feature.title}</h3>
+                <p className="text-sm font-light leading-snug text-ink/60">
+                  {feature.description}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="mt-8 hidden items-stretch gap-5 sm:mt-10 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {whyFeatures.map((feature, i) => {
             const Icon = icons[i]
 

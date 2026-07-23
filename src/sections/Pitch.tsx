@@ -4,7 +4,7 @@ import SectionLabel from '../components/SectionLabel'
 
 export default function Pitch() {
   return (
-    <section className="bg-charcoal px-6 py-[40px] sm:px-8 sm:py-[60px]">
+    <section className="bg-charcoal px-6 py-[32px] sm:px-8 sm:py-[60px]">
       <div className="mx-auto max-w-3xl text-center">
         <FadeIn>
           <SectionLabel>{pitch.label}</SectionLabel>

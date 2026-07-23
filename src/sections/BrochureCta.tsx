@@ -12,7 +12,7 @@ const successNote = (
 
 export default function BrochureCta() {
   return (
-    <section id="brochure" className="bg-umber/15 px-6 py-[40px] sm:px-8 sm:py-[60px]">
+    <section id="brochure" className="bg-umber/15 px-6 py-[32px] sm:px-8 sm:py-[60px]">
       <div className="section-hairline -mx-6 mb-6 sm:-mx-8 sm:mb-8" />
       <div className="mx-auto max-w-2xl text-center">
         <FadeIn>
