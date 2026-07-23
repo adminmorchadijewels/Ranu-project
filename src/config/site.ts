@@ -108,7 +108,7 @@ export const stats = [
   { value: '40+', label: 'World-Class Amenities' },
   { value: '47,300', label: 'Sq.Ft. Clubhouse' },
   { value: '63%', label: 'Open Green Area' },
-  { value: '2030', label: 'Possession' },
+  { value: '2029', label: 'Possession' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -147,21 +147,6 @@ export const brochureCta = {
 /** Builds the pre-filled WhatsApp message sent after a brochure download. */
 export function buildBrochureMessage(name: string, phone: string): string {
   return `Hi, my name is ${name}, phone ${phone}. I've downloaded the brochure for The Autograph. Please share more details.`
-}
-
-// ---------------------------------------------------------------------------
-// 2D. VIDEO — "(THE FILM)" section between the Pitch and Why The Autograph.
-// Paste the YouTube video ID below once it's uploaded (the part after
-// "watch?v=" in the URL) and the placeholder switches to a lazy-loaded
-// embed automatically. Leave empty to keep showing the "coming soon" card.
-// ---------------------------------------------------------------------------
-export const VIDEO_ID = 'pt0_t_01RzA'
-
-
-export const videoSection = {
-  label: '(THE FILM)',
-  headline: 'Experience The Autograph',
-  placeholder: 'Video coming soon',
 }
 
 // ---------------------------------------------------------------------------
@@ -233,7 +218,7 @@ export const configurations = [
 export const configFootnote =
   '*Indicative base price. Taxes and other charges extra.'
 
-export const possessionNote = 'Expected possession: December 2030.'
+export const possessionNote = 'Expected possession: December 2029.'
 
 // ---------------------------------------------------------------------------
 // 6. AMENITIES
@@ -257,7 +242,7 @@ export const amenities = [
   'Game Zone',
   'Departmental Store',
   "Elder's Corner",
-  '360° Security Surveillance',
+  '7 Tier Security Surveillance',
   'Jain & Ram Darbar Temple',
 ]
 
@@ -290,8 +275,8 @@ export const locationColumns = [
     items: [
       { name: 'Narayana E-Techno', time: '1 min' },
       { name: 'Sophia', time: '2 min' },
-      { name: 'Teoler School', time: '3 min' },
-      { name: 'Jaishree Periwal', time: '5 min' },
+      { name: 'Teoler School', time: '5 min' },
+      { name: 'Jaishree Periwal', time: '7 min' },
     ],
   },
   {
@@ -360,7 +345,7 @@ export const faq = {
     {
       question: 'When is possession?',
       answer:
-        'The Autograph is expected to be ready for possession by December 2030.',
+        'The Autograph is expected to be ready for possession by December 2029.',
     },
     {
       question: 'Is the project RERA registered?',

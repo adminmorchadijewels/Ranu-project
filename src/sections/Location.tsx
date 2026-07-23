@@ -38,6 +38,21 @@ export default function Location() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.2} className="mt-10 sm:mt-12">
+          <div className="h-[300px] w-full overflow-hidden rounded-2xl border border-bronze-dark/20 sm:h-[400px]">
+            <iframe
+              src="https://maps.google.com/maps?q=Kanakpura%2C%20Gandhi%20Path%2C%20Vaishali%20Nagar%2C%20Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="The Autograph location map"
+              className="h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className="mt-4 text-center text-xs font-light text-ink/40">
+            The Autograph, Kanakpura, Gandhi Path, Vaishali Nagar (W), Jaipur
+          </p>
+        </FadeIn>
       </div>
     </section>
   )

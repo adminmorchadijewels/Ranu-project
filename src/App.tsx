@@ -6,7 +6,6 @@ import Hero from './sections/Hero'
 import StatStrip from './sections/StatStrip'
 import LeadCapture from './sections/LeadCapture'
 import Pitch from './sections/Pitch'
-import Video from './sections/Video'
 import WhyAutograph from './sections/WhyAutograph'
 import Configurations from './sections/Configurations'
 import Amenities from './sections/Amenities'
@@ -28,7 +27,6 @@ function App() {
         <StatStrip />
         <LeadCapture />
         <Pitch />
-        <Video />
         <WhyAutograph />
         <Configurations />
         <Amenities />
