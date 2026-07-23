@@ -104,4 +104,14 @@
   .accordion-panel > div {
     overflow: hidden;
   }
+
+  /* Hides the scrollbar on the mobile gallery carousel while keeping it scrollable. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
